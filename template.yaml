@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: A SAM template to provision infrastructure in AWS
+Transform: AWS::Serverless-2016-10-31
+
+Globals:
+  Function:
+    CodeUri: dist/
+    Runtime: nodejs16.x
+
+Resources:
+  HelloWorld:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: hello.handler
